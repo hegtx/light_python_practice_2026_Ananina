@@ -13,8 +13,8 @@ def recursion(folder_road):
     return result
 
 def scan_folder(folder_road, type_f_filter=None):
-    conn = database.connected_to_bd()
-    cur = conn.cursor()
+    b_1 = database.connected_to_bd()
+    cur = b_1.cursor()
 
     cur.execute('update files set lifes_file = 1')
 
@@ -42,19 +42,19 @@ def scan_folder(folder_road, type_f_filter=None):
             cur.execute('''insert into files (road_to_file, size, 
             date_modify, type_file, lifes_file) values (?, ?, ?, ?, 0)''', (about_road, size, modified, type_f))
 
-    conn.commit()
-    conn.close()
+    b_1.commit()
+    b_1.close()
     print(f'сканирование завершено. столько файлов найдено: {count_f}')
 
 def show_files(type_f_filter=None):
-    conn = database.connected_to_bd()
-    cur = conn.cursor()
+    b_1 = database.connected_to_bd()
+    cur = b_1.cursor()
     if type_f_filter:
         cur.execute('select road_to_file, size, type_file, lifes_file from files where type_file = ?', (type_f_filter,))
     else:
         cur.execute('select road_to_file, size, type_file, lifes_file from files')
     result_found = cur.fetchall()
-    conn.close()
+    b_1.close()
 
     if not result_found:
         print('база пустая')

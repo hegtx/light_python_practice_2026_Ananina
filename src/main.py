@@ -1,6 +1,7 @@
 import sys
 import database
 import scan
+import dupl
 
 def main():
     if len(sys.argv) < 2:
@@ -13,6 +14,8 @@ def main():
     database.init_db()
     scan.scan_folder(new_folder, type_f_filter)
     scan.show_files(type_f_filter)
+    dupl.get_hash(new_folder)
+    dupl.show_dupl()
 
 if __name__ == '__main__':
     main()
