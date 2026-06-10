@@ -60,7 +60,7 @@ def show_files(type_f_filter=None):
         print('база пустая')
         return
 
-    print(f'{"путь":<50} {"размер":<12} {"тип":<8} {'статус'}')
+    print(f'{"путь":<50} {"размер":<12} {"тип":<8} {"статус"}')
     print()
     for r_f in result_found:
         status = 'отсутствует' if r_f[3] == 1 else 'есть'

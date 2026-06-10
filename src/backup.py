@@ -67,7 +67,6 @@ def get_two_roads(start_road, backup_road):
 
     print(f'исходник: {start_road}')
     print(f'бэкап:    {backup_road}')
-    print()
 
     print(f'есть в исходной, нет в backup {len(only_start)}:')
     for f in only_start:

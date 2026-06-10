@@ -6,12 +6,12 @@ import backup
 
 def main():
     if len(sys.argv) < 2:
+        print('с написанным текстом проблема')
         sys.exit(1)
-        print('не взялся еще один файл (наша папка)')
 
     new_folder = sys.argv[1]
-    print (f'наша папка: {new_folder}')
-    if len(sys.argv) >= 4 and sys.argv[2] == '--backup':
+    print (f'папка: {new_folder}')
+    if len(sys.argv) >= 4 and sys.argv[2] == 'backup':
         road_to_backup = sys.argv[3]
         database.init_db()
         backup.get_two_roads(new_folder,road_to_backup)

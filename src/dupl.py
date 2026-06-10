@@ -6,7 +6,7 @@ def found_hash(road_to_file):
     new_hash = hashlib.md5()
     with open(road_to_file, "rb") as f:
         while True:
-            box_bite = f.read(8192)
+            box_bite = f.read(8192) #будем читать по 8 кб за раз
             if not box_bite:
                 break
             new_hash.update(box_bite)

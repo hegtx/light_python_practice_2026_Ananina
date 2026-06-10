@@ -1,6 +1,6 @@
 import sqlite3
 
-bd_1 = 'index.db'
+bd_1 = 'practica.db'
 
 def connected_to_bd():
     return sqlite3.connect(bd_1)
