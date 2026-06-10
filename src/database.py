@@ -16,8 +16,8 @@ def init_db():
 #hash
     cur.execute('''create table if not exists hashes (id integer primary key autoincrement, 
     file_id integer, hash text, foreign key (file_id) references files(id))''')
-#history(reserve copy)
-    cur.execute('''create table if not exists history_goign (id integer primary key autoincrement, 
+#backup_check(reserve copy)
+    cur.execute('''create table if not exists backup_check (id integer primary key autoincrement, 
     date_check real, road_to_start_folder text, road_to_back_folder text, result text)''')
 
     b_1.commit()
