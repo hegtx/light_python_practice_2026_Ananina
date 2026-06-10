@@ -11,7 +11,7 @@ def main():
 
     new_folder = sys.argv[1]
     print (f'папка: {new_folder}')
-    if len(sys.argv) >= 4 and sys.argv[2] == 'backup':
+    if len(sys.argv) >= 4 and sys.argv[2] == '--backup':
         road_to_backup = sys.argv[3]
         database.init_db()
         backup.get_two_roads(new_folder,road_to_backup)
